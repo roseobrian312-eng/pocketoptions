@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Market Shaker AI | OTC Scanner</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-icon">M</div><div>MARKET SHAKER <b>AI</b><small>OTC TRADING WORKSPACE</small></div></div>
+      <div class="nav active">◉ &nbsp; Dashboard</div><div class="nav">⌁ &nbsp; OTC Scanner</div><div class="nav">▤ &nbsp; Trade History</div><div class="nav">⚙ &nbsp; Settings</div>
+      <div class="side-note">PROTOTYPE BUILD 0.1<br><br>Not connected to Pocket Option. No live market data or trade execution.</div>
+    </aside>
+    <main>
+      <header><div><div class="eyebrow">TRADING INTELLIGENCE</div><h1>OTC Market Scanner</h1><p>Market Shaker AI · Development preview</p></div><div class="status">● UI DEMO · OFFLINE</div></header>
+      <div class="warning"><b>Prototype only:</b> All markets below are placeholders, not real quotes or signals. The scanner does not access Pocket Option and cannot place trades.</div>
+      <div class="stats"><section><span>Connected broker</span><strong>None</strong><small>Awaiting integration</small></section><section><span>Markets streaming</span><strong>0</strong><small>Live OTC feed not configured</small></section><section><span>Trades placed</span><strong>0</strong><small>No order execution</small></section><section><span>Account mode</span><strong>Not linked</strong><small>QT Demo planned</small></section></div>
+      <div class="columns"><section class="panel"><div class="panel-title"><div><h2>Market watchlist</h2><p>Sample instruments — data connection pending</p></div><span class="chip">NOT LIVE</span></div><table><thead><tr><th>MARKET</th><th>PRICE</th><th>SIGNAL</th><th>STATUS</th></tr></thead><tbody id="markets"></tbody></table></section><section class="panel controls"><div class="panel-title"><div><h2>Scanner controls</h2><p>Interface preview</p></div></div><label>Trade stake (USD)</label><input type="number" min="1" step="1" value="1" disabled><label>Maximum trades</label><select disabled><option>1</option><option>2</option><option>3</option><option>5</option></select><label>Expiry</label><select disabled><option>30 seconds</option><option>1 minute</option><option>5 minutes</option></select><button disabled>Start AI Scanner — Unavailable</button><button class="outline" disabled>Enable Auto Trade — Unavailable</button><p class="hint">Controls unlock only after verified live OTC data, a tested QT Demo order adapter, and risk safeguards.</p></section></div>
+      <section class="panel roadmap"><h2>Integration checklist</h2><div><span>✓</span> Render-ready web dashboard</div><div><span>○</span> Verify OTC price feed and asset list</div><div><span>○</span> Implement scanner, scoring and historical validation</div><div><span>○</span> Verify one real QT Demo order and settlement</div><div><span>○</span> Add auto-trading limits and audit logs</div></section>
+      <footer id="server">Checking application status…</footer>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
