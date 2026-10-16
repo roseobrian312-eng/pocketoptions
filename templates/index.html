@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Market Shaker AI | OTC Scanner</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-icon">M</div><div>MARKET SHAKER <b>AI</b><small>OTC TRADING WORKSPACE</small></div></div>
+    <div class="nav active">◉ &nbsp; OTC Market Feed</div><div class="nav">⌁ &nbsp; Scanner (next phase)</div><div class="nav">▤ &nbsp; Trade History</div><div class="nav">⚙ &nbsp; Settings</div>
+    <div class="side-note">READ-ONLY DEVELOPMENT BUILD 0.2<br><br>QT Demo only. No live-money connections. No BUY/SELL functions in this version.<form method="post" action="/logout"><button class="logout">Log out</button></form></div>
+  </aside>
+  <main>
+    <header><div><div class="eyebrow">TRADING INTELLIGENCE</div><h1>OTC Market Scanner</h1><p>Market Shaker AI · Live-feed verification</p></div><div class="status" id="top-status">● DISCONNECTED</div></header>
+    <div class="warning"><b>Connection verification:</b> Quotes below remain blank until actual Pocket Option OTC ticks arrive. This is an unofficial, read-only integration. No signals or orders are fabricated.</div>
+    <div class="stats">
+      <section><span>Feed connection</span><strong id="broker">None</strong><small id="connection-msg">Waiting for demo session</small></section>
+      <section><span>Markets receiving ticks</span><strong id="streaming">0</strong><small>Verified per-symbol tick updates</small></section>
+      <section><span>Trades placed</span><strong>0</strong><small>Trading disabled in code</small></section>
+      <section><span>Account mode</span><strong>QT Demo</strong><small>Read-only · Live accounts blocked</small></section>
+    </div>
+    <div class="columns">
+      <section class="panel"><div class="panel-title"><div><h2>OTC Market Watchlist</h2><p>Only real data received from the test connection is displayed</p></div><span class="chip" id="data-status">NO FEED</span></div>
+        <table><thead><tr><th>MARKET</th><th>LAST PRICE</th><th>PAYOUT</th><th>FEED</th></tr></thead><tbody id="markets"></tbody></table>
+        <p class="hint">Tick timestamps and availability are determined by the unofficial adapter. This version is a connection test, not a trade recommendation.</p>
+      </section>
+      <section class="panel controls"><div class="panel-title"><div><h2>Feed controls</h2><p>Step 1: Verify real Pocket Option OTC prices</p></div></div>
+        <div class="mini-status">{% if has_ssid %}<span class="good">● PO_SSID configured on server</span>{% else %}<span class="muted">● PO_SSID not configured yet</span>{% endif %}</div>
+        <button id="connect-btn" type="button">Connect QT Demo feed</button><p id="action-result" class="hint">No connection request has been made.</p>
+        <div class="rule"></div><h2>Trade settings</h2>
+        <label>Trade stake (USD)</label><input type="number" value="1" disabled>
+        <label>Maximum trades</label><select disabled><option>1</option><option>2</option><option>3</option><option>5</option></select>
+        <label>Expiry</label><select disabled><option>30 seconds</option><option>1 minute</option><option>5 minutes</option></select>
+        <button class="outline" disabled>Auto trade — unavailable</button>
+        <p class="hint">Execution requires a separately tested demo order adapter, risk controls, and agreement with the platform's rules. Never place real-money credentials on this server.</p>
+      </section>
+    </div>
+    <section class="panel roadmap"><h2>Integration checklist</h2><div><span>✓</span> GitHub + Render web dashboard</div><div><span>✓</span> Password-protected private dashboard</div><div><span>○</span> Verify actual OTC prices from QT Demo</div><div><span>○</span> Build pair-ranking scanner using verified data</div><div><span>○</span> Verify one authorized QT Demo order and settlement</div><div><span>○</span> Implement auto-trading with safeguards</div></section>
+    <footer id="server">Checking read-only feed status…</footer>
+  </main>
+</div><script src="/static/app.js"></script></body></html>
